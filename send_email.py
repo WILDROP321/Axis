@@ -71,7 +71,7 @@ def Transfer():
     api_key = 'f7e4223ed2577efbeae06c030b3d59f3'
     api_secret = '7967e03caa456f8dbca32df6631ef35d'
 
-    to_emails = ['wildrop321@gmail.com']  # Make this a list
+    to_emails = ['wildrop321@gmail.com', 'tochandrasp@gmail.com', 'hellosubashgm@gmail.com']  # Make this a list
     formatted_date = date.strftime("%Y-%m-%d")  # Change the format as needed
     subject = f'Stock Predictions {formatted_date}'
 
