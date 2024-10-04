@@ -1,0 +1,9 @@
+Flask
+pandas
+apscheduler
+yfinance
+mailjet-rest
+premailer
+plotly
+numpy
+pytz
