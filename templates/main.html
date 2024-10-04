@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Axis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text color */
+    margin: 0;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: #ffffff; /* White headings for better visibility */
+}
+
+.container {
+    display: flex; /* Flexbox for responsiveness */
+    justify-content: space-between; /* Space between columns */
+    flex-wrap: wrap; /* Wrap columns on smaller screens */
+    margin: 20px 0;
+}
+
+.column {
+    background-color: #1E1E1E; /* Darker background for columns */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    margin: 10px; /* Space between columns */
+    flex: 1; /* Allow columns to grow */
+    min-width: 300px; /* Minimum width for smaller screens */
+}
+
+.column h3 {
+    margin-top: 0; /* Remove top margin for headings */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 20px; /* Space between heading and table */
+}
+
+thead {
+    background-color: #1E1E1E; /* Dark header */
+}
+
+th, td {
+    padding: 15px; /* Space within cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #333; /* Border for rows */
+}
+
+th {
+    color: #BB86FC; /* Light purple for header text */
+}
+
+tbody tr:hover {
+    background-color: #333; /* Darker background on hover */
+}
+
+.download-btn {
+    display: inline-block; /* Inline block for padding */
+    background-color: #BB86FC; /* Light purple button */
+    color: #ffffff; /* White text */
+    padding: 8px 12px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.download-btn:hover {
+    background-color: #9B5BCE; /* Darker shade on hover */
+}
+
+.logout {
+    margin-top: 20px;
+    text-align: right; /* Align logout to the right */
+}
+
+.logout a {
+    color: #FF5252; /* Red for logout link */
+    font-weight: bold;
+}
+
+.column h3 {
+    margin-top: 0; /* Remove top margin for headings */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+li {
+    padding: 8px 0; /* Space for list items */
+}
+
+li a {
+    text-decoration: none; /* Remove underline */
+    color: #BB86FC; /* Light purple for links */
+}
+
+li a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .logout {
+        text-align: center; /* Center logout link on small screens */
+    }
+
+    table {
+        display: block; /* Allow table to scroll */
+        overflow-x: auto; /* Enable horizontal scrolling */
+    }
+}
+
+</style>
+
+<body>
+    <h2>Latest Predictions by Axis</h2>
+    <div class="container">
+        <div class="column">
+            <h3>India Predictions</h3>
+            {% for prediction in india_predictions %}
+            {{ prediction|safe }} <!-- Render HTML safely -->
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h3>USA Predictions</h3>
+            {% for prediction in usa_predictions %}
+            {{ prediction|safe }} <!-- Render HTML safely -->
+            {% endfor %}
+        </div>
+    </div>
+
+    <h3>History</h3>
+    <ul>
+        {% for file in all_files %}
+        <li>
+            <a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <div class="logout">
+        <a href="/logout">Logout</a>
+    </div>
+</body>
+
+</html>

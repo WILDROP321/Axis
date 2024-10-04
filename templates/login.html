@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel Axis login</title>
+</head>
+<style>
+    /* Base Styles */
+/* Base Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text color */
+    margin: 0;
+    display: flex; /* Center the login form */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.login-container {
+    background-color: #1E1E1E; /* Dark background for the form */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    width: 300px; /* Fixed width for the form */
+}
+
+h2 {
+    color: #ffffff; /* White heading for contrast */
+    text-align: center; /* Center heading */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    color: #BB86FC; /* Light purple for labels */
+}
+
+input[type="text"], input[type="password"], .login-btn {
+    width: 100%; /* Ensures full width */
+    padding: 10px; /* Consistent padding */
+    border: 1px solid #333; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #2A2A2A; /* Dark background for input fields */
+    color: #E0E0E0; /* Light text color */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #BB86FC; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.login-btn {
+    background-color: #BB86FC; /* Light purple background for the button */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-btn:hover {
+    background-color: #9B5BCE; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* Full width on small screens */
+        padding: 15px; /* Less padding on smaller screens */
+    }
+}
+</style>
+<body>
+    <div class="login-container">
+        <h2>Login to Axis</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Login" class="login-btn">
+        </form>
+    </div>
+</body>
+
+</html>
