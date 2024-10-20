@@ -229,8 +229,8 @@ if __name__ == "__main__":
     symbol_list = []
     readStocks()
 
-    my_days = 60
-    myInterval = '1d'
+    my_days = 60*55
+    myInterval = '1wk'
 
     print(len(symbol_list))
 
